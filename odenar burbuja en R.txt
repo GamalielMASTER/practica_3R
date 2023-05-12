@@ -1,0 +1,28 @@
+RDENAMIENTO BURBUJAS CON R
+
+________________________________
+#PARA LA CLASIFICACION DE BURBUJAS SE USA bubblesort#
+bubblesort <- function(v) {
+  itemCount <- length(v)
+  repeat {
+# UTILIZAMOS EL VRDADRO O FALSE #
+    hasChanged <- FALSE
+    itemCount <- itemCount - 1
+    for(i in 1:itemCount) {
+      if ( v[i] > v[i+1] ) {
+        t <- v[i]
+        v[i] <- v[i+1]
+        v[i+1] <- t
+# VERDADERO CON IF Y ELSE 
+        hasChanged <- TRUE
+      }
+    }
+    if ( !hasChanged ) break;
+  }
+  v
+}
+# INGRESAMOS LOS NUMEROS A UNA LISTA #
+v <- c(9,8,6,2,4,3,7,5,1,100)
+# IMPRIMIR Y ORDENAR NUMEROS 
+print ("la lista odenada es: ") 
+print(bubblesort(v))
